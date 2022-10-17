@@ -59,6 +59,7 @@ class _TimerScreenState extends State<TimerScreen> {
       print('[=>]' + _timerStatus.toString());
     });
   }
+  
   void runTimer() async {
     Timer.periodic(Duration(seconds: 1), (Timer t) {
       switch (_timerStatus) {
