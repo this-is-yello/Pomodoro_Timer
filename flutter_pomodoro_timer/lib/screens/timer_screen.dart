@@ -1,8 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-
-import 'package:flutter_pomodoro_timer/main.dart';
 import 'package:flutter_pomodoro_timer/tools/utils.dart';
 
 enum TimerStatus { running, paused, stopped, resting }
@@ -111,7 +109,7 @@ class _TimerScreenState extends State<TimerScreen> {
           _timerStatus == TimerStatus.paused ? '계속하기' : '일시정지',
           style: TextStyle(color: Colors.white, fontSize: 16),
         ),
-        style: ElevatedButton.styleFrom(primary: Colors.blue),
+        style: ElevatedButton.styleFrom(primary: Colors.indigo),
         onPressed: _timerStatus == TimerStatus.paused ? resume : pause,
       ),
       Padding(
@@ -134,7 +132,7 @@ class _TimerScreenState extends State<TimerScreen> {
         ),
         style: ElevatedButton.styleFrom(
           primary:
-              _timerStatus == TimerStatus.resting ? Colors.green : Colors.blue,
+              _timerStatus == TimerStatus.resting ? Colors.green : Colors.indigo,
         ),
         onPressed: run,
       ),
@@ -146,7 +144,7 @@ class _TimerScreenState extends State<TimerScreen> {
           child: Text('뽀모도로 타이머'),
         ),
         backgroundColor:
-            _timerStatus == TimerStatus.resting ? Colors.green : Colors.blue,
+            _timerStatus == TimerStatus.resting ? Colors.green : Colors.indigo,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -168,7 +166,7 @@ class _TimerScreenState extends State<TimerScreen> {
               shape: BoxShape.circle,
               color: _timerStatus == TimerStatus.resting
                   ? Colors.green
-                  : Colors.blue,
+                  : Colors.indigo,
             ),
           ),
           Row(
